@@ -49,3 +49,11 @@ trainer.add_event_handler(Events.EPOCH_COMPLETED, logger)
 trainer.run(dataset)
 ```
 After training finishes, the logger object contains a dictionary of epoch-wise metrics.
+
+## Example
+An example application is included in this repository under `example/` where ts-segment is used to segment time series of motion sensor data for activity recognition. Before running the training notebook, the data should first be downloaded and then prepared for modeling.
+```
+cd example/
+bash utils/unpack_dataset.sh
+```
+This will run two auxiliary python scripts to download the [MobiActV2 dataset](https://bmi.teicrete.gr/en/the-mobifall-and-mobiact-datasets-2/) from S3 and to transform the raw data and place it under `data/`.
